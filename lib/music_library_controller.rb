@@ -55,7 +55,13 @@ def initialize(path = './db/mp3s')
 end
 
   def list_genres
+    genres = Genre.all.sort do |a, b|
+      a.name <=> b.name
   end
+  genres.each.with_index(1) do |genre, index|
+    puts "#{index}. #{genre.name}"
+  end
+end
 
   def list_songs_by_artist
   end
