@@ -79,7 +79,7 @@ end
     input = gets.strip
     if genre = Genre.find_by_name(input)
       genre.songs.sort_by{|song|song.name}.each.with_index(1) do |song, index|
-        puts "#{index}. #{artist.name} - #{song.name}"
+        puts "#{index}. #{song.name} - #{song.artist.name}"
       end
     end
   end
