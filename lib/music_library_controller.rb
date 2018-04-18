@@ -66,7 +66,12 @@ end
   def list_songs_by_artist
     puts "Please enter the name of an artist:"
       input = gets.strip
-      Artist.find_by_name(input)
+    if artist = Artist.find_by_name(input)
+      artist.songs.sort_by{|song|song.name}.each.with_index(1) do |song, index|
+        puts "#{index}. #{song.name}"
+      end
+    end
+      #if artist exists, then print all song names by a particular artist alphabetized by song name
   end
 
   def list_songs_by_genre
