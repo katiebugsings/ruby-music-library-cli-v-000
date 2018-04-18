@@ -91,6 +91,5 @@ end
           a.name <=> b.name
         end
         song = songs[input - 1]
-        puts "#{song.name}"
   end
 end
