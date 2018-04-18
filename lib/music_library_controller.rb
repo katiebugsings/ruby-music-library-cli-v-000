@@ -87,5 +87,10 @@ end
   def play_song
     puts "Which song number would you like to play?"
     input = gets.strip
+    songs = Song.all.sort do |a, b|
+          a.name <=> b.name
+        end
+        song = songs[input - 1]
+        puts "#{song.name}"
   end
 end
